@@ -3,7 +3,7 @@ public:
     int sumByD(vector <int>& arr, int div){
         int sum = 0;
         for (int i : arr){
-            sum += ceil((double)i / div);
+            sum += (i + div - 1) / div;
         }
         return sum;
     }
