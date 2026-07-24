@@ -28,6 +28,8 @@ public:
             temp -> next = new ListNode(total % 10);
             temp = temp -> next;
         }
-        return ptr -> next;
+        ListNode *final=ptr->next;
+        delete ptr;
+        return final;
     }
 };
