@@ -1,16 +1,11 @@
 class Solution {
 public:
     vector<int> findMissingElements(vector<int>& nums) {
-        unordered_map <int, int> mp;
-        int mini = 101, maxi = 0;
-        for (auto x : nums){
-            mp[x]++;
-            maxi = max(x, maxi);
-            mini = min(x, mini);
-        }
+        sort(nums.begin(), nums.end());
         vector <int> ans;
-        for (int i = mini; i <= maxi; i++){
-            if (mp.find(i) == mp.end()){
+        set<int>st(nums.begin(),nums.end());
+        for (int i = nums[0]; i <= nums[nums.size() - 1]; i++){
+            if (st.count(i) == 0){
                 ans.push_back(i);
             }
         }
