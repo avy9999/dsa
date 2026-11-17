@@ -10,10 +10,8 @@ public:
             if (players[l] <= trainers[r]){
                 cnt++;
                 l++;
-                r++;
-            } else{
-                r++;
             }
+            r++;
         }
         return cnt;
     }
